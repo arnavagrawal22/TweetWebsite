@@ -1,0 +1,27 @@
+{{#each data}}
+  <p>
+    {{#if this.id}}
+      <h4>According to the above, is the following tweet misleading?</h4>
+      <p> Tweet Id : {{this.id}} </p>
+      <p>{{this.content}}</p>
+      <form action="/" method="POST">
+        <input
+          type="hidden"
+          id="tweetid"
+          name="tweetId"
+          value="{{this.id}}"
+        /><br />
+        <input type="radio" id="yes" name="annotation" value="Yes" required="required" />
+        <label for="yes">Yes</label><br />
+        <input type="radio" id="no" name="annotation" value="No" required="required"/>
+        <label for="no">No</label><br />
+        <input type="submit" value="Submit" />        
+      </form>
+      <form action="/">
+        <input id="acceptButton" type="submit" value="Change Tweet"></button>
+        </form>
+
+    {{/if}}
+
+  </p>
+{{/each}}
