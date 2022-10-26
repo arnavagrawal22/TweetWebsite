@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  "mongodb://localhost:27017/ResearchData",
+  "mongodb+srv://arnav:tweetannotations123@cluster0.lrbi6xp.mongodb.net/?retryWrites=true&w=majority",
   { useNewUrlParser: true },
   (error) => {
     if (!error) {
