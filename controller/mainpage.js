@@ -8,10 +8,11 @@ const SendModel = mongoose.model("FormReply");
 const FormReply = require("../model/formreply");
 
 router.get("/", (req, res) => {
-  rand = Math.floor(Math.random() * 1000);
+  rand = Math.floor(Math.random() * 13565);
   GetModel.findOne({ id: rand }, (err, docs) => {
     if (!err) {
       res.render("index", { data: docs });
+      // res.send(docs);
     } else {
       console.log("Got an error");
     }

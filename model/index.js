@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  "mongodb+srv://arnav:tweetannotations123@cluster0.lrbi6xp.mongodb.net/?retryWrites=true&w=majority",
+  "mongodb+srv://arnav:tweetannotations123@cluster0.lrbi6xp.mongodb.net/ResearchData",
   { useNewUrlParser: true },
   (error) => {
     if (!error) {
@@ -14,5 +14,3 @@ mongoose.connect(
 
 const FormReply = require("./formreply");
 const Tweet = require("./rawtweet");
-
-
