@@ -1,27 +1,103 @@
+<style>
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 35px;
+  }
+
+  label {
+    width: 100%;
+    background-color: #f6a192;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 35px;
+  }
+
+  
+</style>
+
+
+
 {{#each data}}
-  <p>
-    {{#if this.id}}
-      <h4>According to the above, is the following tweet misleading?</h4>
-      <p> Tweet Id : {{this.id}} </p>
-      <p>{{this.content}}</p>
-      <form action="/" method="POST">
-        <input
-          type="hidden"
-          id="tweetid"
-          name="tweetId"
-          value="{{this.id}}"
-        /><br />
-        <input type="radio" id="yes" name="annotation" value="Yes" required="required" />
-        <label for="yes">Yes</label><br />
-        <input type="radio" id="no" name="annotation" value="No" required="required"/>
-        <label for="no">No</label><br />
-        <input type="submit" value="Submit" />        
-      </form>
-      <form action="/">
-        <input id="acceptButton" type="submit" value="Change Tweet"></button>
-        </form>
+<p>
+  {{#if this.id}}
 
-    {{/if}}
+<h3>Facts about Monkeypox</h3>
+<ol>
 
-  </p>
+
+  <li>Vaccines used during the smallpox eradication program also
+    protect monkeypox. Newer vaccines have been developed, of
+    which one has been approved for the prevention of monkeypox.
+  </li>
+
+  <li>Monkeypox is caused by the monkeypox virus, a member of the
+    Orthopoxvirus genus in the family Poxviridae.</li>
+
+  <li>Monkeypox is usually a self-limited disease with symptoms
+    lasting from 2 to 4 weeks. Severe cases can occur. Recently, the
+    case fatality ratio has been around 3–6%.</li>
+
+  <li>Monkeypox is transmitted to humans through close contact with
+    an infected person or animal or with material contaminated with
+    the virus.</li>
+
+  <li>Monkeypox virus is transmitted from one person to another by
+    close contact with lesions, body fluids, respiratory droplets, and
+    contaminated materials such as bedding.</li>
+
+  <li>Monkeypox is a zoonotic viral disease that occurs primarily in
+    tropical rainforest areas of central and West Africa and is
+    occasionally exported to other regions.</li>
+
+  <li>An antiviral agent developed for the treatment of smallpox has
+    also been licensed for the treatment of monkeypox.</li>
+
+  <li> The clinical presentation of monkeypox resembles that of
+    smallpox, a related orthopoxvirus infection declared eradicated
+    worldwide in 1980. Monkeypox is less contagious than smallpox
+    and causes less severe illness.
+  </li>
+
+  <li>Monkeypox typically presents clinically with fever, rash, and
+    swollen lymph nodes and may lead to various medical
+    complications.</li>
+</ol>
+
+<p>
+  <b><i>Please read the above facts, and based on it, please answer the following question, if the tweet does not make
+      sense, or you are uncertain, kindly skip the tweet using the button given. </i></b>
+</p>
+
+<h4>According to the above, is the following tweet misleading?</h4>
+<p> Tweet Id : {{this.id}} </p>
+<p>{{this.content}}</p>
+<form action="/" method="POST">
+  <input type="hidden" id="tweetid" name="tweetId" value="{{this.id}}" /><br />
+  <input type="radio" id="yes" name="annotation" value="Yes" required="required" />
+  <label for="yes">Yes</label><br />
+  <br>
+  <br>
+  <input type="radio" id="no" name="annotation" value="No" required="required" />
+  <label for="no">No</label><br />
+  <br>
+  <input type="submit" value="Submit" />
+</form>
+<form action="/">
+  <input id="acceptButton" type="submit" value="Cannot be determined - Change Tweet"></button>
+</form>
+
+{{/if}}
+
+</p>
 {{/each}}

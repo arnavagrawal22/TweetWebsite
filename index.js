@@ -5,7 +5,7 @@ const path = require("path");
 const expressHandleBars = require("express-handlebars");
 const bodyparser = require("body-parser");
 const controller = require("./controller/mainpage");
-
+require("dotenv").config();
 application.use(
   bodyparser.urlencoded({
     extended: true,
@@ -29,6 +29,6 @@ application.set("view engine", "hbs");
 
 application.use("/", controller);
 
-application.listen("3000", () => {
+application.listen(process.env.PORT || 3000, () => {
   console.log("Server Started");
 });
